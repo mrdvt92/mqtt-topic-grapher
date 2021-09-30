@@ -4,7 +4,7 @@ MQTT Topic Grapher
 
 # Overview
 
-Push messages onto MQTT and magically have them rendered into MRTG charts.
+Push messages onto MQTT every minute and magically have them rendered into MRTG charts.
 
 # Apache Web server
 
@@ -17,7 +17,6 @@ grapher/$graph/$series value
 ## $graph format
 
 $graph = sort\_title\_min\_max
-
 
 Example: 100\_Temperature\_60\_80
 
@@ -50,3 +49,7 @@ Example: Basement
 A float number between min and max defined in $graph format
 
 Example: 72.4
+
+# Limitations
+
+This RRD implementation requires that the data be stored every minute.  If your data is event based or does not arrive every minute please store the data in a variable and read that variable every minute.
