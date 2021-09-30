@@ -1,0 +1,11 @@
+[Unit]
+Description=mqtt-topic-grapher
+Requires=network-online.target
+After=network.target network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/perl /usr/share/mqtt-topic-grapher/mqtt-topic-grapher.pl
+
+[Install]
+WantedBy=multi-user.target
